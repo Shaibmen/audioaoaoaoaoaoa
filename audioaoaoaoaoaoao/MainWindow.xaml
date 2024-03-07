@@ -13,6 +13,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -22,19 +23,24 @@
         </Grid.ColumnDefinitions>
 
         <Button Grid.Row="0" Grid.Column="0" Content="Open Folder" Click="OpenFolder_Click" Margin="5"/>
-        <Button Grid.Row="0" Grid.Column="1" Content="History" Click="History_Click" Margin="5"/>
 
         <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Margin="5" x:Name="PlaylistListBox"/>
 
         <MediaElement Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Margin="5" x:Name="MediaPlayer"/>
 
-        <Slider Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Margin="5" Orientation="Horizontal" ValueChanged="PositionSlider_ValueChanged"/>
+        <Slider x:Name="PositionSlider" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Margin="5" Orientation="Horizontal" ValueChanged="PositionSlider_ValueChanged" Maximum="100"/>
 
-        <Slider Grid.Row="3" Grid.Column="0" Margin="5,5,10,10" Orientation="Horizontal" Minimum="0" Maximum="100" ValueChanged="VolumeSlider_ValueChanged" x:Name="VolumeSlider"/>
+        <Slider Grid.Row="3" Grid.Column="0" Margin="5,5,10,10" Orientation="Horizontal" Maximum="100" ValueChanged="VolumeSlider_ValueChanged" x:Name="VolumeSlider"/>
 
         <Button Grid.Row="4" Grid.Column="0" Content="Play/Pause" Click="PlayPause_Click" Margin="5"/>
         <Button Grid.Row="4" Grid.Column="1" Content="Previous" Click="Previous_Click" Margin="5"/>
         <Button Grid.Row="4" Grid.Column="2" Content="Next" Click="Next_Click" Margin="5"/>
         <Button Grid.Row="4" Grid.Column="3" Content="Repeat" Click="Repeat_Click" Margin="5"/>
+        <Label x:Name="currentTimeLabel" Content="0:00" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="100" Height="32" Grid.RowSpan="2"/>
+        <Label x:Name="remainingTimeLabel" Grid.Column="7" Content="-0:00" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="31" Width="100"/>
+
     </Grid>
+
 </Window>
+    
+    
